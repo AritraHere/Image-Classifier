@@ -1,0 +1,140 @@
+:root {
+  --bg: #f0ebe3;
+  --ink: #1a1a1a;
+  --muted: #5c5c5c;
+  --accent: #0d5c63;
+  --accent-hover: #094449;
+  --err: #8b1e1e;
+  --line: #cfc8bc;
+  --surface: #faf7f2;
+  --font: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, #dfe8e4 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, #e8dfd2 0%, transparent 50%),
+    var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: min(36rem, 100% - 2rem);
+  margin: 4rem auto 2rem;
+  flex: 1;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+}
+
+.lede {
+  margin: 0 0 1.75rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+input[type="file"] {
+  font: inherit;
+  color: var(--ink);
+}
+
+button {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  padding: 0.65rem 1.35rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+.error {
+  margin-top: 1.25rem;
+  color: var(--err);
+  font-weight: 500;
+}
+
+.results {
+  margin-top: 1.75rem;
+}
+
+.results h2 {
+  font-size: 1rem;
+  font-weight: 650;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.results ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.results li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.results li:last-child {
+  border-bottom: none;
+}
+
+.label {
+  text-transform: capitalize;
+}
+
+.score {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

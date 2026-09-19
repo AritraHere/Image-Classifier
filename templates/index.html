@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Image Classifier</h1>
+    <p class="lede">Upload an image to get the top ImageNet predictions.</p>
+
+    <form method="post" enctype="multipart/form-data">
+      <label for="imagefile">Choose an image</label>
+      <input id="imagefile" type="file" name="imagefile" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp" required>
+      <button type="submit">Classify</button>
+    </form>
+
+    {% if error %}
+    <p class="error" role="alert">{{ error }}</p>
+    {% endif %}
+
+    {% if predictions %}
+    <section class="results" aria-label="Predictions">
+      <h2>Top predictions</h2>
+      <ol>
+        {% for p in predictions %}
+        <li>
+          <span class="label">{{ p.label }}</span>
+          <span class="score">{{ "%.1f"|format(p.confidence) }}%</span>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+  </main>
+  <footer>Image Classifier</footer>
+</body>
+</html>

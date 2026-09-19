@@ -1,0 +1,20 @@
+# local tooling
+.cursor/
+
+# env / secrets
+.env
+.env.*
+
+# python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
